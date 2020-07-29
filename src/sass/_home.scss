@@ -1,0 +1,17 @@
+.home{
+    width: auto;
+    height: 45em;
+    .homeGroup{
+        background-color: black;
+        width: auto;
+        height: 45em;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

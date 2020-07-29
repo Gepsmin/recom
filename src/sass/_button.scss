@@ -1,0 +1,43 @@
+.Button{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 4em;
+    padding-left: 4em;
+
+    .ButtonLink{
+        cursor: pointer;
+
+        .ButtonSVG{
+            width: 350px;
+            height: 200px;
+            .ButtonPath{
+                fill: $main1;
+                stroke: $back;
+                stroke-width: 8;
+            }
+        }
+        .ButtonHeader{
+            font-size: 5em;
+            cursor: pointer;
+            font-family: BebasNeueBold;
+            height: 0em;
+            text-align: center;
+            transform: translate(0, -170px);
+            color: $back;
+        }
+    }
+    .ButtonLink:hover{
+        .ButtonSVG{
+            .ButtonPath{
+                fill: $back;
+                stroke: $main2;
+            }
+        }
+        .ButtonHeader{
+            color: $main2;
+        }
+    }
+
+    
+    
+}

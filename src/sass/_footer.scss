@@ -1,0 +1,35 @@
+.Footer{
+    background-color: #E9E2D7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .SocialMedia{
+        margin-left: 3em;
+        display: flex;
+        flex-direction: column;
+        .SocialMediaHeader{
+            margin-top:1em;
+            font-size: 25px;
+            font-family: BebasNeueBold;
+        }
+
+        .SocialMediaLinks{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            >div{
+                font-size: 25px;
+                width: 3em;
+                height: 2em;
+            }
+        }
+    }
+    .WhoWeAre{
+        font-size: 15px;
+        font-family: BebasNeueBold;
+        text-align: end;
+        margin-top: 5em;;
+        margin-right: 0.3em;
+    }
+}

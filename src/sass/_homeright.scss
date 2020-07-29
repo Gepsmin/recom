@@ -1,0 +1,20 @@
+.HomeRight{
+    background-color: $main2;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .HomeRightHeader{
+        cursor: pointer;
+        text-align: center;
+        color: $front;
+        font-family: BebasNeueBold;
+        font-size: 5em;
+    }
+}
+
+.HomeRight:hover{
+    .HomeRightHeader{
+        background-color: $back;
+    }
+}

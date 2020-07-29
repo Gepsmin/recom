@@ -1,0 +1,59 @@
+.Tshirt{
+    height: 45em;
+    width: auto;
+    background-color: $main1;
+    
+
+    .TshirtPage{
+        padding-top: 8em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .TshirtForm{
+            height: auto;
+            width: 15em;
+            >div{
+                margin-bottom: 1em;
+            }
+        }
+    
+        .TshirtSVG{
+            width: 30em;
+            height: 30em;
+        }
+
+        .texts{
+            width: 0em;
+            transform: translate(-30em, 0);
+            .sleeve{
+                display: inline-block;
+                height: 0;
+                white-space: nowrap;
+                font-family: BebasNeueBold;
+                color: $back;
+            }
+            .waist{
+                height: 0;
+                display: inline-block;
+                white-space: nowrap;
+                font-family: BebasNeueBold;
+                color: $back;
+            }
+            .chest{
+                height: 0;
+                display: inline-block;
+                white-space: nowrap;
+                font-family: BebasNeueBold;
+                color: $back;
+            }
+            .length{
+                height: 0;
+                display: inline-block;
+                white-space: nowrap;
+                font-family: BebasNeueBold;
+                color: $back;
+            }
+        }
+    }
+    
+}

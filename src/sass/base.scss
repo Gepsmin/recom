@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+@import "./config";
+
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../node_modules/bulma/sass/form/_all.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+
+
+
+
+
+
+
+//bizimkiler
+@import "./home";
+@import "./homeleft";
+@import "./homeright";
+@import "./navbar";
+@import "./footer";
+@import "./properties";
+@import "./shirt";
+@import "./size";
+@import "./me";
+@import "./button";
+@import "./outfit/tshirt";
+
+body{
+  margin: 0;
+}
+html.has-navbar-fixed-top, body.has-navbar-fixed-top {
+  padding-top: 0rem;
+}

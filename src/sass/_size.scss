@@ -1,0 +1,12 @@
+.Size{
+    transform: translate(0,-1em);
+    background-color: #EBB2B3;
+    height: 55em;
+    .Properties{
+        transform: translate(15%, 8em);
+        >div{
+            width: 25%;
+            margin: 0.5em;
+        }
+    }
+}
