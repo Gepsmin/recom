@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import Navbar from './Navbar'
 import Button from './Button'
-import Avatar from './Avatar'
+
 
 class Me extends Component{
     constructor(){
