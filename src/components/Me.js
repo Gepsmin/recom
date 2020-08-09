@@ -2,6 +2,10 @@ import React , {Component} from 'react';
 import Navbar from './Navbar'
 import Button from './Button'
 
+import { string, func} from 'prop-types';
+import { getBody } from './redux/actions';
+import { connect } from 'react-redux';
+
 
 class Me extends Component{
     constructor(){
@@ -58,6 +62,15 @@ class Me extends Component{
         }else{
             this.setState(()=>({createBody:true}));
         }
+
+        const {fetchBody} = this.props
+
+        if(this.state.chest){
+            fetchBody(this.state.chest);
+        }else{
+            fetchBody(0);
+        }
+
 
         this.setState(()=>({xchest: chest, xwaist: waist,
             xlength: length}));
@@ -127,4 +140,26 @@ class Me extends Component{
 
 }
 
-export default Me;
+Me.propTypes = {
+    body: string,
+    fetchBody: func.isRequired,
+}
+
+Me.defaultProps = {
+    body: null,
+}
+
+export const mapStateToProps = (data) => {
+    return{
+        body: data.body,
+    }
+}
+
+export const mapDispatchToProps = {
+    fetchBody: getBody.request,
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Me);

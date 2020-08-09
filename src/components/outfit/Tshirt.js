@@ -1,5 +1,10 @@
 import React, {Component} from "react";
 import Navbar from '../Navbar';
+import Me from "../Me";
+
+import { string, func} from 'prop-types';
+import { getBody } from '../redux/actions/index';
+import { connect } from 'react-redux';
 
 class Tshirt extends Component{
 
@@ -45,6 +50,8 @@ class Tshirt extends Component{
         const waist = this.state.waist;
         const length = this.state.length;
         const sleeve = this.state.sleeve;
+
+        console.log(this.props);
 
         if(chest===''||waist===''||length===''||sleeve===''){
             this.setState(()=>({create:false}));
@@ -191,10 +198,10 @@ class Tshirt extends Component{
                     </svg>
 
                     <div className="texts" style={{display: create? 'block': 'none'}}>
-                        <text className="sleeve" style={{transform:`translate(${1*this.state.xsleeve}px, 0)`}} >SLEEVE {this.state.xsleeve} CM</text>
-                        <text className="chest" style={{transform:`translate(${2*this.state.xchest}px, ${this.state.xlength*1-15}px)`}}>CHEST {this.state.xchest} CM</text>
-                        <text className="length"style={{transform:`translate(${3*this.state.xchest+5}px, ${this.state.xlength*3/2}px)`}}>LENGTH {this.state.xlength} CM</text>
-                        <text className="waist" style={{transform:`translate(${2*this.state.xwaist+10}px, ${this.state.xlength*2+10}px)`}}>WAIST {this.state.xwaist} CM</text>
+                        <h1 className="sleeve" style={{transform:`translate(${1*this.state.xsleeve}px, 0)`}} >SLEEVE {this.state.xsleeve} CM</h1>
+                        <h1 className="chest" style={{transform:`translate(${2*this.state.xchest}px, ${this.state.xlength*1-15}px)`}}>CHEST {this.state.xchest} CM</h1>
+                        <h1 className="length"style={{transform:`translate(${3*this.state.xchest+5}px, ${this.state.xlength*3/2}px)`}}>LENGTH {this.state.xlength} CM</h1>
+                        <h1 className="waist" style={{transform:`translate(${2*this.state.xwaist+10}px, ${this.state.xlength*2+10}px)`}}>WAIST {this.state.xwaist} CM</h1>
                     </div>
                 </div>
                 
@@ -204,4 +211,25 @@ class Tshirt extends Component{
 
 }
 
-export default Tshirt;
+Tshirt.propTypes = {
+    body: string,
+}
+
+Me.defaultProps = {
+    body: null,
+}
+
+export const mapStateToProps = (data) => {
+    return{
+        body: data.body,
+    }
+}
+
+export const mapDispatchToProps = {
+
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Tshirt);
