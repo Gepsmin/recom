@@ -3585,6 +3585,9 @@ a.navbar-item,
         font-family: BebasNeueBold;
         color: #9F5F6F; }
 
+.SignUp .SignUpPage {
+  transform: translate(0, 10em); }
+
 body {
   margin: 0; }
 

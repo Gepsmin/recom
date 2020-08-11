@@ -25,6 +25,7 @@ class Navbar extends Component{
                         </g>
                     </svg>
                 </div>
+                <Link to={'/signUp'}>signUp</Link>
                 <div className="Headers">
                     <h1>
                         SIZE

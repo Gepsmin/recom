@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Me from './components/Me';
 import Size from './components/Size';
 import Tshirt from './components/outfit/Tshirt';
+import signUp from './components/profile/signUp';
 import './css/base.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path={"/me/bra"} component={Size} exact></Route>
         <Route path={"/me/skirt"} component={Size} exact></Route>
         <Route path={"/me/hat"} component={Size} exact></Route>
+        <Route path={"/signUp"} component={signUp} exact></Route>
         
       </Switch>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossOrigin="anonymous"></link>

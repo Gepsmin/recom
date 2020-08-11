@@ -2,8 +2,7 @@ import React, {Component} from "react";
 import Navbar from '../Navbar';
 import Me from "../Me";
 
-import { string, func} from 'prop-types';
-import { getBody } from '../redux/actions/index';
+import { string} from 'prop-types';
 import { connect } from 'react-redux';
 
 class Tshirt extends Component{
