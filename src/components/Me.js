@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 import Navbar from './Navbar'
 import Button from './Button'
 
-import { string, func} from 'prop-types';
+import { string, func, object} from 'prop-types';
 import { getBody } from './redux/actions';
 import { connect } from 'react-redux';
 
@@ -56,6 +56,8 @@ class Me extends Component{
         const chest = this.state.chest;
         const waist = this.state.waist;
         const length = this.state.length;
+
+        
 
         if(chest===''||waist===''||length===''){
             this.setState(()=>({createBody:false}));
@@ -151,7 +153,7 @@ Me.defaultProps = {
 
 export const mapStateToProps = (data) => {
     return{
-        body: data.body,
+        body: data['body'].body,
     }
 }
 

@@ -1,22 +1,24 @@
 import React from 'react';
 import createSagaMiddleware from 'redux-saga';
 import { render } from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers} from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
-import reducer from './components/redux/reducers/body'
-import body from './components/redux/sagas/body'
-import ReactDOM from 'react-dom';
+import body from './components/redux/reducers/body'
+import user from './components/redux/reducers/user'
+import rootSaga from './components/redux/sagas/rootSaga'
 import App from './App';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const sagaMiddleware = createSagaMiddleware();
 
+const rootReducer = combineReducers({body: body, user: user})
+
 const store = createStore(
-    reducer, composeWithDevTools(applyMiddleware(sagaMiddleware, logger)),
+    rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware, logger)),
 );
 
-sagaMiddleware.run(body);
+sagaMiddleware.run(rootSaga);
 
 render(
     <Provider store={store}>

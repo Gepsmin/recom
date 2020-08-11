@@ -221,7 +221,7 @@ Me.defaultProps = {
 
 export const mapStateToProps = (data) => {
     return{
-        body: data.body,
+        body: data['body'].body,
     }
 }
 
