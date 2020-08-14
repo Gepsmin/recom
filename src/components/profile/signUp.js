@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Navbar from '../Navbar';
-import { addUserAction } from "../redux/actions";
+import { addUserAction, deleteUserAction } from "../redux/actions";
 import { connect } from 'react-redux';
 
 class signUp extends Component{
@@ -38,8 +38,11 @@ class signUp extends Component{
             name: name,
             password: password
         }
-        this.props.addUser(user);
-        console.log(user)
+        const data = {
+            email: email
+        }
+        this.props.deleteUser(user);
+        console.log(data)
     }
 
     render(){
@@ -84,7 +87,8 @@ const mapStateToProps = (state) =>({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addUser : user => addUserAction(dispatch, user)
+    addUser : user => addUserAction(dispatch, user),
+    deleteUser : email => deleteUserAction(dispatch, email)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(signUp);

@@ -64,6 +64,26 @@ export default function user(state= initialState, action = {}){
                 isLoading: false,
                 errorLoading: true
             }
+        case SUCCESS(ACTION_TYPE.DELETE_USER):
+            return {
+                ...state,
+                id: null,
+                email: null,
+                name: null,
+                password: null,
+                isLoading: false,
+                errorLoading: false,
+            }
+        case FAILURE(ACTION_TYPE.DELETE_USER):
+            return {
+                ...state,
+                id: null,
+                email: null,
+                name: null,
+                password: null,
+                isLoading: false,
+                errorLoading: true,
+            }
         default:
             return state;
     }

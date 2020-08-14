@@ -5,22 +5,38 @@ import { REQUEST, SUCCESS, FAILURE } from '../actions/utils';
 
 //services
 import addUser from '../services/addUser';
-import getUser from '../services/getUser';
+import deleteUser from '../services/deleteUser';
 
+export function* deleteUserSaga(){
+    while(true){
+        try{
+            const {payload} = yield take(REQUEST(ACTION_TYPE.DELETE_USER));
 
+            const userResponse = yield call(
+                deleteUser, payload
+            );
+
+            yield put({
+                type: SUCCESS(ACTION_TYPE.DELETE_USER),
+                payload: userResponse.data
+            });
+        }catch(error){
+            yield put({
+                type: FAILURE(ACTION_TYPE.DELETE_USER),
+                payload: error
+            })
+        }
+    }
+}
 
 export function* addUserSaga(){
     while(true){
         try{
             const {payload} = yield take(REQUEST(ACTION_TYPE.ADD_USER));
-            console.log("saga payload: ");
-            console.log(payload);
 
             const userResponse = yield call(
                 addUser, payload
             );
-
-            console.log(userResponse);
 
             yield put({
                 type: SUCCESS(ACTION_TYPE.ADD_USER),
