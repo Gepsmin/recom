@@ -3478,32 +3478,6 @@ a.navbar-item,
   height: auto;
   width: auto;
   background-color: #EBB2B3; }
-  .Me .AvatarHeader {
-    cursor: pointer;
-    text-align: center;
-    font-family: BebasNeueBold;
-    color: #EBB2B3;
-    font-size: 2em; }
-  .Me .AvatarButton {
-    background-color: #F5F5F5; }
-    .Me .AvatarButton .AvatarOption {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin-top: 3.5em; }
-      .Me .AvatarButton .AvatarOption .AvatarForm {
-        height: auto;
-        width: 15em; }
-        .Me .AvatarButton .AvatarOption .AvatarForm > div {
-          margin-bottom: 1em; }
-      .Me .AvatarButton .AvatarOption .AvatarSVG {
-        margin-left: 10em;
-        width: 15em;
-        height: 20em; }
-  .Me .Outfits {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; }
   .Me .Buttons {
     display: flex;
     flex-direction: row;

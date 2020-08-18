@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import Select from 'react-select'
-import { zara_female , zara_male } from "../data/zara";
-import { koton_female , koton_male } from "../data/koton";
-import { hm_female , hm_male } from "../data/hm";
+import { zara_female } from "../data/zara";
 import Shower from './Shower';
 
 const genderOptions = [

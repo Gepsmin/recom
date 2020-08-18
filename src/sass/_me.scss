@@ -4,43 +4,6 @@
     width: auto;
     background-color: $front;
 
-    .AvatarHeader{
-        cursor: pointer;
-        text-align: center;
-        font-family: BebasNeueBold;
-        color: $front;
-        font-size: 2em;
-    }
-
-    .AvatarButton{
-        background-color: $main1;
-        .AvatarOption{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 3.5em;
-            .AvatarForm{
-                height: auto;
-                width: 15em;
-                >div{
-                    margin-bottom: 1em;
-                }
-            }
-
-            .AvatarSVG{
-                margin-left: 10em;
-                width: 15em;
-                height: 20em;
-            }
-        }
-    }
-
-    .Outfits{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
     .Buttons{
         display: flex;
         flex-direction: row;

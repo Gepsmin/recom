@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
-import Logo from '../images/png/logo.png';
-import { animateScroll as scroll } from "react-scroll";
 
 class Navbar extends Component{
     
