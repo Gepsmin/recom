@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Navbar from '../Navbar';
-import { addUserAction, deleteUserAction } from "../redux/actions";
+import { addUserAction, deleteUserAction, getUserAction } from "../redux/actions";
 import { connect } from 'react-redux';
 
 class signUp extends Component{
@@ -41,7 +41,7 @@ class signUp extends Component{
         const data = {
             email: email
         }
-        this.props.deleteUser(user);
+        this.props.getUser(data);
         console.log(data)
     }
 
@@ -88,7 +88,8 @@ const mapStateToProps = (state) =>({
 
 const mapDispatchToProps = dispatch => ({
     addUser : user => addUserAction(dispatch, user),
-    deleteUser : email => deleteUserAction(dispatch, email)
+    deleteUser : email => deleteUserAction(dispatch, email),
+    getUser : email => getUserAction(dispatch, email)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(signUp);

@@ -3,7 +3,8 @@ import axios from 'axios';
 const instance = axios.create({
     timeout: 10000,
     headers: {
-        'Access-Control-Allow-Origin' : '*'
+        'Access-Control-Allow-Origin' : '*',
+        'Content-Type': 'application/json'
       }
 });
 
