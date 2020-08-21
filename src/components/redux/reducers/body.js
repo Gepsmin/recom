@@ -5,7 +5,7 @@ import { getBody } from '../actions/index';
 const INITIAL_STATE = {
     hasLoadedBody : false,
     errorGettingBody : false,
-    body : null
+    avatar : null
 }
 
 const body = handleActions({
@@ -13,19 +13,19 @@ const body = handleActions({
             ...state,
             hasLoadedBody : false,
             errorGettingBody: false,
-            body : null
+            avatar : null
         }),
         [getBody.SUCCESS]: (state, {payload}) => ({
             ...state,
             hasLoadedBody : true,
             errorGettingBody : false,
-            body : payload.body.payload,
+            avatar : payload.body.payload,
         }),
         [getBody.FAILURE]: state => ({
             ...state,
             hasLoadedBody: false,
             errorGettingBody : true,
-            body : null
+            avatar : null
         })
     },INITIAL_STATE
 );

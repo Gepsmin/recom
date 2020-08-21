@@ -3,6 +3,8 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { getBody } from '../actions/index';
 
 export function* getBodyRequest(obj){
+
+    console.log("In saga")
     if(obj!==null){
         yield put(getBody.success({body: obj}));
     }else{
