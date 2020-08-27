@@ -3479,6 +3479,7 @@ a.navbar-item,
   width: auto;
   background-color: #EBB2B3; }
   .Me .Buttons {
+    transform: translate(0, 5em);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -3562,14 +3563,16 @@ a.navbar-item,
 .SignUp .SignUpPage {
   transform: translate(0, 10em); }
 
-.AvatarPage .AvatarVisual {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .AvatarPage .AvatarVisual .Avatar2D .AvatarSVG {
-    width: 40px;
-    overflow: visible;
-    height: 45em; }
+.AvatarPage {
+  transform: translate(0, 5em); }
+  .AvatarPage .AvatarVisual {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .AvatarPage .AvatarVisual .Avatar2D .AvatarSVG {
+      width: 40px;
+      overflow: visible;
+      height: 45em; }
 
 body {
   margin: 0; }

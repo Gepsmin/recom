@@ -1,10 +1,12 @@
 .AvatarPage{
+    transform: translate(0,5em);
     .AvatarVisual{
         display: flex;
         flex-direction: column;
         align-items: center;
 
         .Avatar2D{
+            
             .AvatarSVG{
                 width: 40px;
                 overflow: visible;
