@@ -1,18 +1,30 @@
 .AvatarPage{
     transform: translate(0,5em);
+    height:  70em;
     .AvatarVisual{
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        .Avatar2D{
+        .AvatarMan{
+            flex-direction: column;
             
-            .AvatarSVG{
-                width: 40px;
+            .AvatarManType{
+                
                 overflow: visible;
-                height: 45em;
-            }
 
+                >div{
+                    overflow: visible;
+                    .type{
+                        overflow: visible;
+
+                    }
+                }
+            }
         }
+
+
     }
+
+
 }

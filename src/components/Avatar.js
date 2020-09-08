@@ -13,8 +13,8 @@ class Avatar extends Component{
             shoulderLength: '42',
             chest: '32',
             waist: '30',
-            length: '48',
-            hips: '36',
+            length: '174',
+            hips: '31',
             armLength: '54',
             leg: '80',
 
@@ -25,8 +25,8 @@ class Avatar extends Component{
             xshoulderLength: '42',
             xchest: '32',
             xwaist: '30',
-            xlength: '48',
-            xhips: '36',
+            xlength: '174',
+            xhips: '31',
             xarmLength: '54',
             xleg: '80',
 
@@ -211,13 +211,13 @@ class Avatar extends Component{
 
 
     render(){
-        var shoulderLength = this.state.xshoulderLength;
-        var chest = this.state.xchest;
-        var waist = this.state.xwaist;
-        var length = this.state.xlength;
-        var hips = this.state.xhips;
-        var armLength = this.state.xarmLength;
-        var leg = this.state.xleg;
+        var shoulder = this.state.xshoulderLength*3;
+        var chest = this.state.xchest*3;
+        var waist = this.state.xwaist*3;
+        var length = this.state.xlength*3;
+        var hips = this.state.xhips*3;
+        var arm = this.state.xarmLength*3;
+        var leg = this.state.xleg*3;
         return(
             <div className="AvatarPage">
                 <div className="AvatarButton" onClick={this.buttonClick}>Avatar Button</div>
@@ -315,8 +315,58 @@ class Avatar extends Component{
                             type 4
                         </button>
 
-                        <div className="AvatarManType" style={{display: this.state.type==="0"? 'flex':'none'}}>
+                        <div className="AvatarManType" onClick={()=>(console.log(shoulder/8, shoulder/2, length/10, length/5))} style={{display: this.state.type==="0"? 'flex':'none'}}>
                             type 0 man
+                            <div>
+                                <svg className="type">
+                                    <path  stroke="black" strokeWidth="1" fill="none"
+                                    d={`M ${20-shoulder/8} 20
+                                    L ${20-shoulder/8} ${20+length/80}
+                                    Q ${20-shoulder*3/16} ${20+length/40} ${20-shoulder*5/16} ${20+length/32}
+                                    Q ${20-shoulder*7/16} ${20+length*3/80} ${20-shoulder/2} ${20+length/20}
+                                    Q ${20-shoulder*17/32} ${20+length/20+arm/10} ${20-shoulder/2} ${20+arm/2}
+                                    Q ${20-shoulder*33/64} ${20+arm*3/5} ${20-shoulder/2} ${20+arm}` }
+                                    ></path> {/*left shoulder*/}
+                                    <path  stroke="black" strokeWidth="1" fill="none"
+                                    d={`M ${20-shoulder*3/8} ${20+arm}
+                                    Q ${20-shoulder*13/32} ${20+arm*15/16} ${20-shoulder*23/64} ${20+arm*3/4}
+                                    Q ${20-shoulder*5/16} ${20+arm*7/12} ${20-shoulder*11/32} ${20+arm/2}
+                                    Q ${20-shoulder*5/16} ${20+arm*5/12} ${20-shoulder*5/16} ${20+length/10}
+                                    Q ${20-waist*7/16} ${20+length*13/30-leg/2} ${20-waist/2} ${20+length*23/32-leg}
+                                    Q ${20-hips*65/128} ${20+length*95/128-leg} ${20-hips/2} ${20+length*3/4-leg}
+                                    Q ${20-hips*8/16} ${20+length*3/4-leg*5/6} ${20-hips*7/16} ${20+length*3/4-leg/2}
+                                    Q ${20-hips*8/16} ${20+length*3/4-leg/3} ${20-hips*13/32} ${20+length*3/4}` }
+                                    ></path> {/*left body*/}
+                                    <path  stroke="black" strokeWidth="1" fill="none"
+                                    d={`M ${20} ${20+length*3/4-leg*11/12}
+                                    Q ${20-hips/8} ${20+length*3/4-leg*2/3} ${20-hips/6} ${20+length*3/4-leg/2} 
+                                    Q ${20-hips/8} ${20+length*3/4-leg/3} ${20-hips*3/16} ${20+length*3/4}` }
+                                    ></path> {/*left bottom*/}
+                                    <path  stroke="black" strokeWidth="1" fill="none"
+                                    d={`M ${20} ${20+length*3/4-leg*11/12}
+                                    Q ${20+hips/8} ${20+length*3/4-leg*2/3} ${20+hips/6} ${20+length*3/4-leg/2} 
+                                    Q ${20+hips/8} ${20+length*3/4-leg/3} ${20+hips*3/16} ${20+length*3/4}` }
+                                    ></path> {/*right bottom*/}
+                                    <path  stroke="black" strokeWidth="1" fill="none"
+                                    d={`M ${20+shoulder/8} 20
+                                    L ${20+shoulder/8} ${20+length/80}
+                                    Q ${20+shoulder*3/16} ${20+length/40} ${20+shoulder*5/16} ${20+length/32}
+                                    Q ${20+shoulder*7/16} ${20+length*3/80} ${20+shoulder/2} ${20+length/20}
+                                    Q ${20+shoulder*17/32} ${20+length/20+arm/10} ${20+shoulder/2} ${20+arm/2}
+                                    Q ${20+shoulder*33/64} ${20+arm*3/5} ${20+shoulder/2} ${20+arm}` }
+                                    ></path> {/*right shoulder*/}
+                                    <path  stroke="black" strokeWidth="1" fill="none"
+                                    d={`M ${20+shoulder*3/8} ${20+arm}
+                                    Q ${20+shoulder*13/32} ${20+arm*15/16} ${20+shoulder*23/64} ${20+arm*3/4}
+                                    Q ${20+shoulder*5/16} ${20+arm*7/12} ${20+shoulder*11/32} ${20+arm/2}
+                                    Q ${20+shoulder*5/16} ${20+arm*5/12} ${20+shoulder*5/16} ${20+length/10}
+                                    Q ${20+waist*7/16} ${20+length*13/30-leg/2} ${20+waist/2} ${20+length*23/32-leg}
+                                    Q ${20+hips*65/128} ${20+length*95/128-leg} ${20+hips/2} ${20+length*3/4-leg}
+                                    Q ${20+hips*8/16} ${20+length*3/4-leg*5/6} ${20+hips*7/16} ${20+length*3/4-leg/2}
+                                    Q ${20+hips*8/16} ${20+length*3/4-leg/3} ${20+hips*13/32} ${20+length*3/4}` }
+                                    ></path> {/*right body*/}
+                                </svg>
+                            </div>
                         </div>
                         <div className="AvatarManType" style={{display: this.state.type==="1"? 'flex':'none'}}>
                             type 1 man
